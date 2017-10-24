@@ -1,0 +1,236 @@
+body {
+    padding: 30px;
+}
+.bg {
+    background-color: LimeGreen;
+}
+
+/* 圆形
+-------------------------------------------------------*/
+.circle {
+    width: 100px;
+    height: 100px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+}
+
+/* 椭圆
+-------------------------------------------------------*/
+.oval {
+    width: 200px;
+    height: 100px;
+    -moz-border-radius: 100px / 50px;
+    -webkit-border-radius: 100px / 50px;
+    border-radius: 100px / 50px;
+}
+
+/* 右上三角
+-------------------------------------------------------*/
+.triangle-topright {
+    width: 0;
+    height: 0;
+    border-top: 100px solid LimeGreen;
+    border-left: 100px solid transparent;
+}
+
+/* 上三角
+-------------------------------------------------------*/
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid LimeGreen;
+}
+
+/* 右三角
+-------------------------------------------------------*/
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 50px solid transparent;
+    border-left: 100px solid LimeGreen;
+    border-bottom: 50px solid transparent;
+}
+
+/* 平行四边形
+-------------------------------------------------------*/
+.parallelogram {
+    width: 150px;
+    height: 100px;
+    margin-left:20px;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
+}
+
+/* 梯形
+-------------------------------------------------------*/
+.trapezoid {
+    border-bottom: 100px solid LimeGreen;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    height: 0;
+    width: 100px;
+}
+
+/* 六角星
+-------------------------------------------------------*/
+.star-six {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid LimeGreen;
+    position: relative;
+}
+.star-six:after {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 100px solid LimeGreen;
+    position: absolute;
+    content: "";
+    top: 30px;
+    left: -50px;
+}
+
+/* 五角星
+-------------------------------------------------------*/
+.star-five {
+   margin: 50px 0;
+   position: relative;
+   display: block;
+   color: LimeGreen;
+   width: 0px;
+   height: 0px;
+   border-right:  100px solid transparent;
+   border-bottom: 70px  solid LimeGreen;
+   border-left:   100px solid transparent;
+   -moz-transform:    rotate(35deg);
+   -webkit-transform: rotate(35deg);
+   -ms-transform:     rotate(35deg);
+   -o-transform:      rotate(35deg);
+}
+.star-five:before {
+   border-bottom: 80px solid LimeGreen;
+   border-left: 30px solid transparent;
+   border-right: 30px solid transparent;
+   position: absolute;
+   height: 0;
+   width: 0;
+   top: -45px;
+   left: -65px;
+   display: block;
+   content: '';
+   -webkit-transform: rotate(-35deg);
+   -moz-transform:    rotate(-35deg);
+   -ms-transform:     rotate(-35deg);
+   -o-transform:      rotate(-35deg);
+    
+}
+.star-five:after {
+   position: absolute;
+   display: block;
+   color: LimeGreen;
+   top: 3px;
+   left: -105px;
+   width: 0px;
+   height: 0px;
+   border-right: 100px solid transparent;
+   border-bottom: 70px solid LimeGreen;
+   border-left: 100px solid transparent;
+   -webkit-transform: rotate(-70deg);
+   -moz-transform:    rotate(-70deg);
+   -ms-transform:     rotate(-70deg);
+   -o-transform:      rotate(-70deg);
+   content: '';
+}
+
+/* 提示对话框
+-------------------------------------------------------*/
+.talkbubble {
+   width: 120px;
+   height: 80px;
+   background: LimeGreen;
+   position: relative;
+   -moz-border-radius:    10px;
+   -webkit-border-radius: 10px;
+   border-radius:         10px;
+}
+.talkbubble:before {
+   content:"";
+   position: absolute;
+   right: 100%;
+   top: 26px;
+   width: 0;
+   height: 0;
+   border-top: 13px solid transparent;
+   border-right: 26px solid LimeGreen;
+   border-bottom: 13px solid transparent;
+}
+
+/* 食逗人（Pac-Man）
+-------------------------------------------------------*/
+.pacman {
+    width: 0px;
+    height: 0px;
+    border-right: 60px solid transparent;
+    border-top: 60px solid limegreen;
+    border-left: 60px solid limegreen;
+    border-bottom: 60px solid limegreen;
+    border-top-left-radius: 60px;
+    border-top-right-radius: 60px;
+    border-bottom-left-radius: 60px;
+    border-bottom-right-radius: 60px;
+}
+
+/* 鸡蛋
+-------------------------------------------------------*/
+.egg {
+    display:block;
+    width: 126px;
+    height: 180px;
+    background-color: limeGreen;
+    -webkit-border-radius: 63px 63px 63px 63px / 108px 108px 72px 72px;
+    border-radius: 50%   50%  50%  50%  / 60%   60%   40%  40%;
+}
+
+/* 阴阳八卦
+-------------------------------------------------------*/
+.yin-yang {
+     width: 96px;
+     height: 48px;
+     background: #eee;
+     border-color: LimeGreen;
+     border-style: solid;
+     border-width: 2px 2px 50px 2px;
+     border-radius: 100%;
+     position: relative;
+}
+  
+.yin-yang:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    background: #eee;
+    border: 18px solid LimeGreen;
+    border-radius: 100%;
+    width: 12px;
+    height: 12px;
+}
+  
+.yin-yang:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background: LimeGreen;
+    border: 18px solid #eee;
+    border-radius:100%;
+    width: 12px;
+    height: 12px;
+}
