@@ -1,5 +1,5 @@
 /**
- * @name 
+ * @name
  *  单行文本溢出显示省略号
  * @description
  *  实现单行文本的溢出显示省略号使用text-overflow:ellipsis属性
@@ -7,18 +7,18 @@
  */
 .line-1 {
     overflow: hidden;
-    text-overflow:ellipsis;
+    text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 /**
- * @name 
+ * @name
  *  多行文本溢出显示省略号
  * @description
  *  <1> -webkit-line-clamp用来限制在一个块元素显示的文本的行数。 为了实现该效果，它需要组合其他的WebKit属性。常见结合属性：
  *  <2> display: -webkit-box; 必须结合的属性，将对象作为弹性伸缩盒子模型显示
  *  <3> -webkit-box-orient 必须结合的属性，设置或检索伸缩盒对象的子元素的排列方式
- * 
+ *
  * 其实现方式是（该方法适用范围广，但文字未超出行的情况下也会出现省略号，可结合js优化该方法）：
  * p {position: relative; line-height: 20px; max-height: 40px;overflow: hidden;}
  * p::after {
@@ -38,4 +38,3 @@
     -webkit-line-clamp: 3;
     overflow: hidden;
 }
-

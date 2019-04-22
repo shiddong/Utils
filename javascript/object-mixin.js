@@ -21,7 +21,7 @@ export function mix(...mixins) {
     }
 
     return Mix;
-  }
+}
 
 function copyProperties(target, source) {
     for (let key of Reflect.ownKeys(source)) {
