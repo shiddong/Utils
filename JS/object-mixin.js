@@ -1,7 +1,7 @@
 /**
  * @file 合成对象Mixin模式
  * @author shiddong <shiddong@outlook>
- * @desc
+ * @desc 等价于 obj = {...obj1, ...obj2}
  *  class DistributedEdit extends mix(Loggable, Serializable) {
  *      // ...
  *  }
