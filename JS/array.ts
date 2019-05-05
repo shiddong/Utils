@@ -4,6 +4,13 @@ import { isArray } from "./type-check"
  * @file 数组处理方法
  * @author shiddong <shiddong@outlook.com>
  */
+/**
+ * @name 数组去重（合并）
+ */
+export function removeDuplication(...arrays) {
+    const arr = [].concat.apply([], arrays)
+    return Array.from(new Set(arr))
+}
 
 /**
  * @name 遍历数组或对象，并传入回调函数
