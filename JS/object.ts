@@ -51,3 +51,73 @@ export function* entries(obj: IObj): Generator {
         yield [key, obj[key]]
     }
 }
+
+/**
+ * @name instanceof 重定义
+ * @desc 来源于React的babel解析
+ */
+function xInstanceof(left: any, right: any) {
+    if (right != null && typeof Symbol !== "undefined" && right[Symbol.hasInstance]) {
+        return right[Symbol.hasInstance](left)
+    } else {
+        return left instanceof right
+    }
+}
+
+/**
+ * @name classCallCheck 重定义
+ * @desc 来源于React的babel解析
+ */
+function xClassCallCheck(instance, Constructor) {
+    if (!xInstanceof(instance, Constructor)) {
+        throw new TypeError("Cannot call a class as a function")
+    }
+}
+
+/**
+ * @name defineProperties 重定义
+ * @desc 来源于React的babel解析
+ */
+function xDefineProperties(target, props) {
+    for (var i = 0; i < props.length; i++) {
+        var descriptor = props[i]
+        descriptor.enumerable = descriptor.enumerable || false
+        descriptor.configurable = true
+        if ("value" in descriptor) {
+            descriptor.writable = true
+        }
+        Object.defineProperty(target, descriptor.key, descriptor)
+    }
+}
+
+/**
+ * @name createClass 重定义
+ * @desc 来源于React的babel解析
+ */
+function xCreateClass(Constructor, protoProps, staticProps) {
+    if (protoProps) {
+        xDefineProperties(Constructor.prototype, protoProps)
+    }
+    if (staticProps) {
+        xDefineProperties(Constructor, staticProps)
+    }
+    return Constructor
+}
+
+/**
+ * @name defineProperty 重定义
+ * @desc 来源于React的babel解析
+ */
+function xDefineProperty(obj, key, value) {
+    if (key in obj) {
+        Object.defineProperty(obj, key, {
+            value: value,
+            enumerable: true,
+            configurable: true,
+            writable: true
+        })
+    } else {
+        obj[key] = value
+    }
+    return obj
+}
