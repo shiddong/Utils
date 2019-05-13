@@ -21,3 +21,21 @@ export function combineURLs(baseURL: string, relativeURL: string) {
         ? baseURL.replace(/\/+$/, '') + '/' + relativeURL.replace(/^\/+/, '')
         : baseURL
 }
+
+/**
+ * @name 转换对象为form-data
+ * @desc
+ *  使用方式: obj = {name: 'shiddong', age: 22}
+ *  transformData(obj) => "name=shiddong&age=22"
+ */
+export function transFormData(data: {
+    [key: string]: string | number | boolean | undefined
+}): string {
+    const keys = Object.keys(data)
+    const keysLen = keys.length
+    return keys.reduce((preStr, cur, index) => {
+        const value = data[cur]
+        const flag = index < keysLen-1 ? '&' : ''
+        return `${preStr}${cur}=${value}${flag}`
+    }, '')
+}
