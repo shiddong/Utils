@@ -49,3 +49,24 @@ function forEachObject(obj: Object, fn: IEachObjectFn) {
         }
     }
 }
+
+/**
+ * @name 扩展数组的负索引
+ * @desc 使用Proxy拦截
+ * 使用：list = createExtendArray(['name', 'age'])
+ * list[-1] // 'age'
+ */
+function createExtendArray(arr: any[]): any[] {
+    let handler = {
+        get (target, propKey, receiver) {
+            let index = Number(propKey)
+            if (index < 0) {
+                propKey = String(target.length + index)
+            }
+            return Reflect.get(target, propKey, receiver)
+        }
+    }
+
+    return new Proxy(arr, handler)
+}
+

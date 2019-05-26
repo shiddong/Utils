@@ -39,3 +39,13 @@ export function transFormData(data: {
         return `${preStr}${cur}=${value}${flag}`
     }, '')
 }
+
+/**
+ * @name 获取URL的参数
+ * @desc 直接使用URLSearchParams
+ * // 对于较低版本引入polyfill <import URLSearchParams from 'url-search-params'>
+ * location.search: "?name=mdn&locate=shanghai"
+ * let params = new URLSearchParams(window.location.search)
+ * let name = params.get("name")
+ * params.has("locate")    // true
+ */
